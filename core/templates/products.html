@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    
+
+    {% extends 'base.html' %}
+
+    {% block content %}
+    {% if request.GET.q %}
+    <h3>Results for "{{ request.GET.q }}"</h3>
+    {% endif %}
+    
+    <h2>All Products 🛒</h2>
+    
+    <div class="grid">
+    
+    {% for product in products %}
+        <div class="card">
+            
+            {% if product.image %}
+                <img src="{{ product.image }}">
+            {% endif %}
+    
+            <h3>{{ product.name }}</h3>
+            <p class="price">₹{{ product.price }}</p>
+            <p>{{ product.category }}</p>
+    
+            <a href="/add-to-cart/{{ product.id }}/">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+    {% endfor %}
+    
+    </div>
+    <div class="pagination">
+
+        {% if products.has_previous %}
+            
+            <a href="?page={{ products.previous_page_number }}">⬅ Prev</a>
+        {% endif %}
+    
+        <span class="current">
+            Page {{ products.number }} of {{ products.paginator.num_pages }}
+        </span>
+    
+        {% if products.has_next %}
+            <a href="?page={{ products.next_page_number }}">Next ➡</a>
+            
+        {% endif %}
+    
+    </div>
+ 
+    
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FarmHub</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-card {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #1b5e20;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logout-form {
+    display: inline;
+    margin: 0;
+}
+
+.logout-form button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-form button:hover {
+    text-decoration: underline;
+}
+
+
+     
+        .admin-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f1f8f4;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.admin-section h2 {
+    margin-bottom: 10px;
+}
+
+.admin-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.admin-card {
+    padding: 15px 25px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.admin-card:hover {
+    background: #1b5e20;
+}
+
+     
+
+
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #1b5e20;
+}
+.cart-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.quantity-box a {
+    text-decoration: none;
+    background: #2e7d32;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+   
+    gap: 10px;
+    margin-top: 10px;
+}
+.checkout-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 25px;
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #e68900;
+}
+
+.qty-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #2e7d32;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.qty-btn:hover {
+    background: #1b5e20;
+    transform: scale(1.1);
+}
+
+.qty-number {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 25px;
+    text-align: center;
+}
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.success-card {
+    background: white;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 5px 25px rgba(0,0,0,0.1);
+}
+
+.success-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.success-card h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.success-text {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.continue-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.continue-btn:hover {
+    background: #1b5e20;
+}
+.remove-btn {
+    color: red;
+    text-decoration: none;
+}
+
+        /* NAVBAR */
+        .navbar {
+            background: #2e7d32;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTAINER */
+        .container {
+            padding: 20px;
+        }
+
+        /* HERO (HOME CENTER) */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+
+        }
+        .pagination {
+        margin-top: 30px;
+        text-align: center;
+        }
+
+        .pagination a {
+        padding: 8px 14px;
+        margin: 5px;
+        background: #2e7d32;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+        }
+
+       .pagination a:hover {
+       background: #1b5e20;
+       }
+
+      .pagination .current {
+      margin: 0 10px;
+      font-weight: bold;
+      color: #333;
+      }
+      input[name="q"] {
+    outline: none;
+}
+
+input[name="q"]:focus {
+    border: 2px solid #4CAF50;
+}
+
+/* Search bar container */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+/* Input */
+.search-input {
+    width: 250px;
+    padding: 8px 12px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Button */
+.search-btn {
+    padding: 8px 15px;
+    border: none;
+    background: #1b5e20;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background: #145a18;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Input */
+.search-box input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Input focus */
+.search-box input:focus {
+    border-color: #2e7d32;
+}
+
+/* Button */
+.search-box button {
+    padding: 6px 12px;
+    border: none;
+    background: #2e7d32;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.profile-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.profile-header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profile-header h2 {
+    margin-bottom: 5px;
+}
+
+.orders-section h3 {
+    margin-bottom: 15px;
+}
+
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.order-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+}
+
+.order-card h4 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+.order-card .date {
+    font-size: 12px;
+    color: gray;
+    margin-top: 8px;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #2e7d32;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+/* Hover */
+.search-box button:hover {
+    background: #1b5e20;
+}
+
+        /* IMAGE */
+        img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        /* PRICE */
+        .price {
+            color: green;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        /* BUTTON */
+        button {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div><b>🌾 FarmHub</b></div>
+    
+        <div class="nav-links">
+            <form action="/products/" method="GET" class="search-box">
+                <input type="text" name="q" placeholder="Search products..." />
+                <button type="submit">Search</button>
+            </form>
+            
+            <a href="/">Home</a>
+            <a href="/products/">Products</a>
+            
+            {% if user.is_authenticated %}
+                <a href="/cart/">Cart</a>
+            {% endif %}
+            <a href="/admin/">Admin</a>
+        
+            {% if user.is_authenticated %}
+                <form action="/accounts/logout/" method="POST" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            {% else %}
+                <a href="/accounts/login/">Login</a>
+                <a href="/register/">Register</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <a href="/profile/">Profile</a>
+            {% endif %}
+           
+        </div>
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+      <p style="color: rgb(128, 0, 0); text-align:center;">
+        {{ message }}
+      </p>
+    {% endfor %}
+  {% endif %}
+
+    
+
+
+        {% block content %}
+        {% endblock %}
+    
+    
+
+    
+
+
+</body>
+</html>

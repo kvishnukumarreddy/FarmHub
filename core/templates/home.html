@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FarmHub</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>Welcome to FarmHub 🌿</h1>
+    <p>Buy fresh farm products directly from farmers.</p>
+
+    <a href="/products/">
+        <button>Explore Products</button>
+    </a>
+
+</div>
+{% if user.is_authenticated and user.is_superuser %}
+
+
+{% endif %}
+{% endblock %}
+
+</body>
+</html>

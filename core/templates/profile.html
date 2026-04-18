@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <h2>👤 My Profile</h2>
+        <p>Welcome back, <strong>{{ request.user.username }}</strong></p>
+    </div>
+
+    <!-- Order Section -->
+    <div class="orders-section">
+        <h3>🛒 Order History</h3>
+
+        {% if orders %}
+            <div class="orders-grid">
+                {% for order in orders %}
+                    <div class="order-card">
+                        <h4>{{ order.product.name }}</h4>
+                        <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+                        <p><strong>Price:</strong> ₹{{ order.price }}</p>
+                        <p class="date">{{ order.date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-orders">
+                <p>No orders yet 😔</p>
+                <a href="/products/" class="btn">Explore Products</a>
+            </div>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
