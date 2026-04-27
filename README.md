@@ -26,6 +26,7 @@ pip install django
 3. Run migrations & start server
 
 python manage.py migrate
+
 python manage.py runserver
 
 4. Open browser
@@ -34,25 +35,27 @@ Go to http://127.0.0.1:8000
 
 ---
 
-📂 Project Structure
+## 📂 Project Structure
 
-FarmHub/
-├── manage.py
-├── db.sqlite3
-├── farmhub/                ← Django project settings
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-└── core/                   ← Main application
-    ├── models.py           ← Database models
-    ├── views.py            ← Business logic
-    ├── urls.py             ← URL routes
-    └── templates/
-        ├── home.html
-        ├── register.html
-        ├── login.html
-        ├── dashboard.html
-        └── products.html
+```text
+FarmHub
+- manage.py
+- db.sqlite3
+- farmhub
+   - settings.py
+   - urls.py
+   - wsgi.py
+- core
+   - models.py
+   - views.py
+   - urls.py
+   - templates
+      - home.html
+      - register.html
+      - login.html
+      - dashboard.html
+      - products.html
+
 
 ---
 
