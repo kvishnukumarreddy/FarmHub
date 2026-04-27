@@ -1,14 +1,10 @@
-# 🌾 FarmHub — Online Farm Product Management System
-
 FarmHub link : https://github.com/kvishnukumarreddy/FarmHub
-
-An Online Farm Product Management System developed using Django that:
-
-1. Allows farmers and customers to register/login securely
-2. Enables farmers to add and manage farm products
-3. Displays available agricultural products for customers
-4. Provides search and product viewing functionality
-5. Includes admin panel for complete product/user management
+1.An Online Farm Product Management System developed using Django that:
+2.Allows farmers and customers to register/login securely
+3.Enables farmers to add and manage farm products
+4.Displays available agricultural products for customers
+5.Provides search and product viewing functionality
+6.Includes admin panel for complete product/user management
 
 ---
 
