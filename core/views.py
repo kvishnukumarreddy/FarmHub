@@ -29,18 +29,33 @@ def products(request):
 
 def register(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password1')
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        username = request.POST['username']
+        password = request.POST['password']
 
-        if not User.objects.filter(username=username).exists():
-            User.objects.create_user(username=username, password=password)
-            return redirect('login')
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists')
+            return redirect('/register/')
+
+        User.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+            first_name=first_name,
+            last_name=last_name
+        )
+
+        messages.success(request, 'Registration Successful')
+        return redirect('/accounts/login/')
 
     return render(request, 'register.html')
 
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
+        Firstname = request.POST.get('Firstname')
         password = request.POST.get('password')
 
         print("USERNAME:", username)
@@ -59,6 +74,10 @@ def user_login(request):
             return render(request, 'login.html',)
 
     return render(request, 'login.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('/')
 
 
 def add_to_cart(request, product_id):
@@ -135,3 +154,6 @@ def buy_view(request):
 def profile(request):
     orders = Order.objects.filter(user=request.user)
     return render(request, 'profile.html', {'orders': orders})
+
+
+
